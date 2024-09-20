@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+    <title>Agriculture Management</title>
+    {% endblock %}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f9f9f9;
+        font-family: 'Arial', sans-serif;
+      }
+      .navbar {
+        background-color: #4CAF50; /* Green, symbolizing nature */
+      }
+      .navbar-brand, .nav-link {
+        color: #fff !important;
+      }
+      .nav-link:hover {
+        color: #d4edda !important; /* Light green hover */
+      }
+      .container-fluid {
+        margin-top: 20px;
+      }
+      .navbar-toggler {
+        border: none;
+      }
+      .btn-nav {
+        color: #fff;
+        background-color: #5cb85c; /* Button green color */
+        border: none;
+        margin-right: 10px;
+      }
+      .btn-nav:hover {
+        background-color: #4cae4c;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">AgriManager</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">
+                <button class="btn btn-nav">Home</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'add' %}">
+                <button class="btn btn-nav">Add Plant</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'low' %}">
+                <button class="btn btn-nav">Low</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'moderate' %}">
+                <button class="btn btn-nav">Moderate</button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'high' %}">
+                <button class="btn btn-nav">High</button>
+              </a>
+            </li>
+            <li class="nav-item"></li>
+              <a class="nav-link" href="{% url 'plant_search' %}">
+                <button class="btn btn-nav">Search</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      {% block content %}
+      <!-- Content goes here -->
+      {% endblock %}
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

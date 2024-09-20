@@ -1,0 +1,27 @@
+{% extends 'welcome.html' %}
+
+{% block title %}
+   <title>Show Plants</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-3 mb-3" style="color: #4CAF50;">High Water Plants</h1>
+    <table class="table table-bordered table-striped" style="background-color: #e8f5e9;">
+       <thead class="thead-light">
+         <tr>
+           <th scope="col">Name</th>
+           <th scope="col">Next Date</th>
+         </tr>
+       </thead>
+       <tbody>
+       {% for i in water_plants %}
+         <tr>
+           <td>{{ i.plant_name }}</td>
+           <td>{{ i.next_datetime }}</td>
+         </tr>
+       {% endfor %}
+       </tbody>
+     </table>
+</div>
+{% endblock %}

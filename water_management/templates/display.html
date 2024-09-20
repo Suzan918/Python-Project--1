@@ -1,0 +1,38 @@
+{% extends 'welcome.html' %}
+
+{% block title %}
+   <title>Show Todo</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1 class="text-center mt-3 mb-3">Resevoirs</h1>
+<table class="table table-dark table-bordered">
+   <thead>
+     <tr>
+       <th scope="col">name</th>
+       <th scope="col">capacity</th>
+       <th scope="col">location</th>
+       <th scope="col">Status</th>
+       <th scope="col">Actions</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for i in water_sources %}
+     <tr>
+       <td><span class="badge bg-success">{{i.name}}</span></td>
+       <td>{{i.capacity}}</td>
+       <td>{{i.location}}</td>
+       <td><span class="badge bg-primary">{{i.status}}</span></td>
+       <td>
+      
+       </td>
+       <td>
+           
+       </td>
+     </tr>
+   {% endfor %}
+   </tbody>
+ </table>
+</div>
+{% endblock %}

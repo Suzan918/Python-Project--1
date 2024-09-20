@@ -1,0 +1,33 @@
+{% extends 'welcome.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Add Water Page</title>
+{% endblock %} 
+
+{% block content %} 
+<div class="container mt-4">
+    
+    <form method="get" action="{% url 'plant_search' %}" class="mb-4">
+        <div class="input-group">
+            {{ form.query }}
+            <button type="submit" class="btn btn-success mt-3">Search</button>
+        </div>
+    </form>
+    
+
+    <ul class="list-group">
+        {% for plant in plants %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ plant.plant_name }} - Next Watering: {{ plant.next_datetime }} - Category: {{ plant.get_category_display }}
+                <span class="badge badge-success badge-pill">
+                    Countdown Days ({{ plant.days_remaining }})
+                </span>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No plants found matching your search.</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
